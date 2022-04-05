@@ -14,3 +14,8 @@ Aplikace se bude zabývat telefonování vlastních kontaktů a zároveň použi
 - Řazení kontaktů abecedně
 - Přidání do oblíbených
 - Stránka pro nastavení, pokud to stihnu (např. Dark Mode toggle) 
+
+Phone App Wireframe
+
+<img src="https://user-images.githubusercontent.com/57211432/161702489-feb130e6-983a-4f48-be7b-fb1b35580cc2.png" alt="Wireframe image" width="428" height="926">
+
