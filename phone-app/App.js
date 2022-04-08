@@ -1,12 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { NavigationContainer, StackActions } from '@react-navigation/native'
+import { NativeScreenContainer } from 'react-native-screens';
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Contacts from './screens/Contacts'
 
 export default function App() {
+
+  const Tab = createNativeStackNavigator();
+  // ve středu test z MIT
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+
+      <NavigationContainer
+      
+      >
+        <Tab.Navigator>
+
+          <Tab.Screen name="Homie" component={Contacts}> </Tab.Screen>
+        </Tab.Navigator>
+
+
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
 
