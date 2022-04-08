@@ -2,23 +2,29 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import { NavigationContainer, StackActions } from '@react-navigation/native'
 import { NativeScreenContainer } from 'react-native-screens';
-
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Contacts from './screens/Contacts'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Favorites from './screens/Favorites';
+import DirectCall from './screens/DirectCall';
+
+export const FAVORITES = "Favorites";
+export const DIRECT_CALL = "Direct Call";
+export const CONTACTS = "Contacts";
 
 export default function App() {
 
-  const Tab = createNativeStackNavigator();
+  const Tab = createBottomTabNavigator();
   // ve středu test z MIT
   return (
     <SafeAreaView>
 
-      <NavigationContainer
-      
-      >
-        <Tab.Navigator>
-
-          <Tab.Screen name="Homie" component={Contacts}> </Tab.Screen>
+      <NavigationContainer>
+        <Tab.Navigator
+          initialRouteName={CONTACTS}
+        >
+          <Tab.Screen name={FAVORITES} component={Favorites}/>
+          <Tab.Screen name={DIRECT_CALL} component={DirectCall}/>
+          <Tab.Screen name={CONTACTS} component={Contacts}/>
         </Tab.Navigator>
 
 
